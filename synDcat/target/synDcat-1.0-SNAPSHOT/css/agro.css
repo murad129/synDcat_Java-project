@@ -1,0 +1,187 @@
+/* ========== GLOBAL ========== */
+/* 
+body {
+    font-family: 'Baloo 2', cursive;
+    background: #f4f9f4;
+    color: #2e3d2f;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+*/
+/* ========== HEADER ========== */
+/*
+#header {
+    background: linear-gradient(90deg, #1b5e20, #2e7d32);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+#logo a {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+}
+*/
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: #e8f5e9;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+.nav-menu li a:hover,
+.nav-menu .menu-active a {
+    background: #a5d6a7;
+    color: #1b5e20;
+}
+
+.buy-tickets a {
+    background: #ff7043;
+    color: white !important;
+}
+
+/* ========== SECTION ========== */
+.section-with-bg {
+    background: linear-gradient(to bottom right, #f1f8e9, #ffffff);
+}
+
+.section-header h2 {
+    text-align: center;
+    font-weight: 700;
+    color: #1b5e20;
+}
+
+.section-header p {
+    text-align: center;
+    color: #558b2f;
+}
+
+/* ========== FORM CARD ========== */
+.form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #c8e6c9;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 8px rgba(102,187,106,0.3);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+    padding: 10px 22px;
+    font-weight: 600;
+    border-radius: 30px !important;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #43a047, #66bb6a);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #2e7d32, #43a047);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #2e7d32, #4caf50);
+    border: none;
+}
+
+.btn-secondary {
+    background: #78909c;
+    border: none;
+}
+
+/* ========== TABLE ========== */
+.table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.table thead {
+    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    color: white;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background: #f1f8e9;
+    transform: scale(1.002);
+    transition: 0.2s;
+}
+
+/* ========== ALERTS ========== */
+.alert {
+    border-radius: 12px;
+}
+
+/* ========== FOOTER ========== */
+#footer {
+    background: #1b5e20;
+    color: white;
+    margin-top: 50px;
+}
+
+#footer .credits {
+    font-weight: 600;
+}
+
+/* ========== BACK TO TOP ========== */
+.back-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background: #43a047;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        background: #2e7d32;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+}

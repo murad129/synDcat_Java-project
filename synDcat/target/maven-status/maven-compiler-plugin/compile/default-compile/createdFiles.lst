@@ -1,0 +1,11 @@
+com\mycompany\syndcat\resources\JakartaEE11Resource.class
+com\mycompany\syndcat\SaveChangesServlet.class
+com\mycompany\syndcat\SignupServlet.class
+com\mycompany\syndcat\LoginServlet.class
+com\mycompany\syndcat\RegisterFarmerServlet.class
+com\mycompany\syndcat\AddFarmingServlet.class
+com\mycompany\syndcat\DBConnect.class
+com\mycompany\syndcat\JakartaRestConfiguration.class
+com\mycompany\syndcat\AddAgroProductServlet.class
+com\mycompany\syndcat\DeleteFarmerServlet.class
+com\mycompany\syndcat\UpdateFarmerServlet.class

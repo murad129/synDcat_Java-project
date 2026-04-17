@@ -1,0 +1,81 @@
+CREATE DATABASE IF NOT EXISTS farmers;
+USE farmers;
+
+-- USERS TABLE (login/signup)
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+-- FARMER REGISTER TABLE
+CREATE TABLE register (
+  rid INT PRIMARY KEY AUTO_INCREMENT,
+  farmername VARCHAR(50) NOT NULL,
+  nidnumber VARCHAR(20) NOT NULL,
+  age INT NOT NULL,
+  gender VARCHAR(20) NOT NULL,
+  phonenumber VARCHAR(15) NOT NULL,
+  address VARCHAR(100) NOT NULL,
+  farming VARCHAR(50) NOT NULL
+);
+
+-- FARMING TYPES (optional reference)
+CREATE TABLE farming (
+  fid INT PRIMARY KEY AUTO_INCREMENT,
+  farmingtype VARCHAR(200) NOT NULL
+);
+
+-- AGRO PRODUCTS
+CREATE TABLE addagroproducts (
+  pid INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  productname VARCHAR(100) NOT NULL,
+  productdesc TEXT NOT NULL,
+  price INT NOT NULL,
+  farmer_id INT NULL  -- optional foreign key to register.rid
+);
+
+-- CHANGE LOG (for changes.jsp)
+CREATE TABLE changes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  deleted_text TEXT NOT NULL,
+  new_text TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- TRIGGER LOG TABLE (for audit)
+CREATE TABLE trig (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  fid INT NOT NULL,          -- farmer ID (rid)
+  action VARCHAR(50) NOT NULL,
+  timestamp DATETIME NOT NULL
+);
+
+-- TRIGGERS
+DELIMITER $$
+
+CREATE TRIGGER insertion
+AFTER INSERT ON register
+FOR EACH ROW
+BEGIN
+  INSERT INTO trig VALUES (NULL, NEW.rid, 'FARMER INSERTED', NOW());
+END$$
+
+CREATE TRIGGER updation
+AFTER UPDATE ON register
+FOR EACH ROW
+BEGIN
+  INSERT INTO trig VALUES (NULL, NEW.rid, 'FARMER UPDATED', NOW());
+END$$
+
+CREATE TRIGGER deletion
+BEFORE DELETE ON register
+FOR EACH ROW
+BEGIN
+  INSERT INTO trig VALUES (NULL, OLD.rid, 'FARMER DELETED', NOW());
+END$$
+
+DELIMITER ;

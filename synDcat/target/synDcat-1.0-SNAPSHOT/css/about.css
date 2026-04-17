@@ -1,0 +1,18 @@
+
+
+    body, .col-lg-12, h4, p, ul li, .alert, .credits {
+        color: #2e7d32; /* গাঢ় সবুজ */
+    }
+    h2, h4 {
+        color: #1b5e20; /* শিরোনামের জন্য একটু গাঢ় সবুজ */
+    }
+    .alert {
+        background-color: #e8f5e9; /* হালকা সবুজ ব্যাকগ্রাউন্ড */
+        border-color: #4caf50;
+    }
+    .text-success, .text-info {
+        color: #2e7d32 !important; /* আইকনগুলোর রং সবুজ রাখতে (যদি ক্লাস থাকে) */
+    }
+    .fa-check-circle {
+        color: #4caf50; /* আইকন সবুজ */
+    }
